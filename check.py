@@ -8,6 +8,7 @@ class Test:
 
 def main(coco, objects365, keys=["teddy bear", "suitcase", "sports ball"]):
     tester = Test(coco, objects365)
+    print("All same classes:", tester.classes)
     for key in keys:
         if tester.find_key(key):
             print(f"{key} is in list")
