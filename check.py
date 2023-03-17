@@ -6,9 +6,9 @@ class Test:
         return key in self.classes
 
 
-def main(coco, objects365):
+def main(coco, objects365, keys=["teddy bear", "suitcase", "sports ball"]):
     tester = Test(coco, objects365)
-    for key in ["teddy bear", "suitcase", "sports"]:
+    for key in keys:
         if tester.find_key(key):
             print(f"{key} is in list")
         else:
@@ -16,7 +16,9 @@ def main(coco, objects365):
 
 
 if __name__ == "__main__":
-    coco = ["Carrot", "Kite"]  # , ...
-    objects365 = ["Cainsaw", "Eraser"]  # , ...
+    from coco import coco
+    from objects365 import objects365
 
-    main(coco, objects365)
+    keys = ["teddy bear", "suitcase", "sports ball"]
+
+    main(coco, objects365, keys)
